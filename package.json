@@ -1,6 +1,6 @@
 {
   "name": "@mhsammak/containerjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight library of common data structures and algorithms.",
   "keywords": ["algorithms", "data structures", "array", "linked list", "priority queue", "stack", "queue"],
   "homepage": "https://github.com/musabbirsammak/containerjs",
