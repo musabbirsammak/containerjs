@@ -1,12 +1,23 @@
 {
-  "name": "containerjs",
+  "name": "@mhsammak/containerjs",
   "version": "1.0.0",
-  "description": "A lightweight library of data structures.",
+  "description": "A lightweight library of common data structures and algorithms.",
+  "keywords": ["algorithms", "data structures", "array", "linked list", "priority queue", "stack", "queue"],
+  "homepage": "https://github.com/musabbirsammak/containerjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/musabbirsammak/containerjs"
+  },
+  "bugs": {
+    "url": "https://github.com/musabbirsammak/containerjs/issues",
+    "email": "musabbirhasansammak@gmail.com"
+  },
   "main": "index.js",
+  "bin": "./index.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "Musabbir Sammak",
+  "author": "Musabbir Sammak <musabbirhasansammak@gmail.com> (https://www.sammak.xyz)",
   "license": "MIT",
   "devDependencies": {
     "jest": "^29.7.0"
