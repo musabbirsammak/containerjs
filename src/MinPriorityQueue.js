@@ -1,6 +1,7 @@
 class MinPriorityQueue {
-    constructor() {
+    constructor(cmp) {
         this.heap = [];
+        this.cmp = cmp;
     }
 
     enqueue(item) {
@@ -38,7 +39,7 @@ class MinPriorityQueue {
     heapifyUp(idx) {
         while (idx > 0) {
             const parentIdx = Math.floor((idx - 1) / 2);
-            if (this.heap[idx] < this.heap[parentIdx]) {
+            if (this.cmp(this.heap[idx], this.heap[parentIdx]) < 0) {
                 [this.heap[idx], this.heap[parentIdx]] = [this.heap[parentIdx], this.heap[idx]];
                 idx = parentIdx;
             } else {
@@ -54,10 +55,10 @@ class MinPriorityQueue {
             const rightChildIdx = idx * 2 + 2;
             let minIdx = idx;
 
-            if (leftChildIdx <= lastIdx && this.heap[leftChildIdx] < this.heap[minIdx]) {
+            if (leftChildIdx <= lastIdx && this.cmp(this.heap[leftChildIdx], this.heap[minIdx]) < 0) {
                 minIdx = leftChildIdx;
             }
-            if (rightChildIdx <= lastIdx && this.heap[rightChildIdx] < this.heap[minIdx]) {
+            if (rightChildIdx <= lastIdx && this.cmp(this.heap[rightChildIdx], this.heap[minIdx]) < 0) {
                 minIdx = rightChildIdx;
             }
             if (minIdx !== idx) {

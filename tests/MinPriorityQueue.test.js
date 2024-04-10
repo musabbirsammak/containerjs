@@ -1,6 +1,12 @@
 const MinPriorityQueue = require("../src/MinPriorityQueue");
 
-let mQueue = new MinPriorityQueue();
+let comparator = function(a, b) {
+    if (a < b) return -1;
+    else if (a > b) return 1;
+    else return 0;
+}
+
+let mQueue = new MinPriorityQueue(comparator);
 
 test('Test MinPriorityQueue enqueue function', () => {
     mQueue.enqueue(17);
