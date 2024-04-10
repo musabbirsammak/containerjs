@@ -1,0 +1,14 @@
+{
+  "name": "containerjs",
+  "version": "1.0.0",
+  "description": "A lightweight library of data structures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Musabbir Sammak",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
