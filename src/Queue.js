@@ -1,5 +1,5 @@
 class Queue {
-    constructor(size) {
+    constructor(capacity) {
         this.q = Array(capacity);
         this.capacity = this.capacity;
         this.size = 0;
@@ -16,6 +16,7 @@ class Queue {
         }
         this.tail = (this.tail + 1) % this.capacity;
         this.q[this.tail] = item;
+        this.size++;
     }
 
     dequeue() {
@@ -49,3 +50,5 @@ class Queue {
         return (this.head == -1) && (this.tail == -1);
     }
 }
+
+module.exports = Queue;
