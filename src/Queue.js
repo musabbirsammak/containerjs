@@ -1,33 +1,38 @@
 class Queue {
+    #queue;
+    #capacity;
+    #head;
+    #tail;
+
     /**
-     * Initializes a new queue with the given capacity.
+     * Initializes an empty queue with the given capacity.
      * 
      * @param {Number} Initial capacity. 
      */
-    constructor(capacity) {
-        this.q = Array(capacity);
-        this.capacity = this.capacity;
+    constructor(initialCapacity) {
+        this.#queue = Array(initialCapacity);
+        this.#head = -1;
+        this.#tail = -1;
+        this.#capacity = initialCapacity;
         this.length = 0;
-        this.head = -1;
-        this.tail = -1;
     }
 
     /**
-     * Enqueues the given item in the queue.
+     * Enqueues the given item into the queue.
      * 
      * @param {Any} item Item to be enqueued.
      * @throws {RangeError} Queue overflow.
      */
     enqueue(item) {
-        if (this.isFull) {
+        if (this.isFull()) {
             throw new RangeError("Queue overflow.");
         }
         if (this.isEmpty()) {
-            this.head = 0;
+            this.#head = 0;
         }
-        this.tail = (this.tail + 1) % this.capacity;
-        this.q[this.tail] = item;
-        this.size++;
+        this.#tail = (this.#tail + 1) % this.#capacity;
+        this.#queue[this.#tail] = item;
+        this.length++;
     }
 
     /**
@@ -40,12 +45,12 @@ class Queue {
         if (this.isEmpty()) {
             throw new RangeError("Queue underflow.");
         } else {
-            let item = this.q[this.head];
-            if (this.head === this.tail) {
-                this.head = -1;
-                this.tail = -1;
+            let item = this.#queue[this.#head];
+            if (this.#head === this.#tail) {
+                this.#head = -1;
+                this.#tail = -1;
             } else {
-                this.head = (this.head + 1) % this.capacity;
+                this.#head = (this.#head + 1) % this.#capacity;
             }
             return item;
         }
@@ -60,7 +65,7 @@ class Queue {
         if (this.isEmpty()) {
             throw new RangeError("Queue underflow.");
         } else {
-            return this.q[this.head];
+            return this.#queue[this.#head];
         }
     }
 
@@ -70,7 +75,7 @@ class Queue {
      * @returns {Boolean} True if the queue is full, false otherwise. 
      */
     isFull() {
-        return ((this.head == 0) && (this.tail == this.capacity - 1)) || ((this.tail + 1) == this.head);
+        return ((this.#head == 0) && (this.#tail == this.#capacity - 1)) || ((this.#tail + 1) == this.#head);
     }
 
     /**
@@ -79,7 +84,7 @@ class Queue {
      * @returns {Boolean} True if the queue is empty, false otherwise. 
      */
     isEmpty() {
-        return (this.head == -1) && (this.tail == -1);
+        return (this.#head == -1) && (this.#tail == -1);
     }
 }
 
