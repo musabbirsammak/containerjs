@@ -1,3 +1,8 @@
-const MinPriorityQueue = require("./src/MinPriorityQueue");
+const PriorityQueue = require("./src/PriorityQueue");
+const Stack = require("./src/Stack");
+const Queue = require("./src/Queue");
 
-exports.MinPriorityQueue = MinPriorityQueue;
+exports.PriorityQueue = PriorityQueue;
+exports.Stack = Stack;
+exports.Queue = Queue;
+

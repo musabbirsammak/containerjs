@@ -1,4 +1,4 @@
-const PriorityQueue = require("../src/MinPriorityQueue");
+const PriorityQueue = require("../src/PriorityQueue");
 
 let comparator = function(a, b) {
     if (a < b) return -1;
